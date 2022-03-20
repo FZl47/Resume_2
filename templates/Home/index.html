@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fazel Momeni</title>
+    <link rel="stylesheet" href="{% static 'Bootstrap/dist/css/bootstrap.min.css' %}">
+
+</head>
+<style>
+
+    :root {
+        --color-base: #0d1c2d,
+    }
+
+    @font-face {
+        font-family: 'Raleway';
+        font-weight: normal;
+        src: url("/assets/Fonts/raleway/Raleway-Regular.ttf") format('truetype');
+        src: url("/assets/Fonts/raleway/Raleway-Regular.woff") format('woff');
+    }
+
+
+    body {
+        background: linear-gradient(200deg, #1c1e1f, #191f2d) no-repeat fixed;
+        color: #eee;
+        font-family: 'Raleway';
+        direction: rtl;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .container-section-content {
+        height: calc(100vh - 40px);
+        width: 50%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .section-contnet {
+
+    }
+
+    .container-image-me {
+        position: relative;
+    }
+
+
+    .image-me {
+        width: 380px;
+        -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+        mask-image: linear-gradient(180deg, #000 60%, transparent);
+    }
+
+    #container-view {
+        position: relative;
+        padding: 0 75px;
+    }
+
+    .image-design-container-view {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 0;
+        opacity: .1;
+        object-fit: contain;
+        z-index: -2;
+
+    }
+
+    .TitleName {
+        width: 100%;
+        height: auto;
+    }
+
+
+</style>
+<body>
+<main>
+    <div class="d-flex justify-content-between" id="container-view">
+        <img src="{% static 'Images/Design/Shape/Star-4.svg' %}" alt="Star Design" class="mb-5">
+        <div class="text-center pt-5 mt-5">
+            <div class="text-left">
+                <img src="{% static 'Images/Design/Shape/Star-2.svg' %}" alt="Star Design">
+            </div>
+            <img src="{% static 'Images/Design/FazelMomeni.jpg' %}" alt="Fazel Momeni Web-Developer" class="TitleName">
+            <div class="text-right">
+                <img src="{% static 'Images/Design/Shape/Star-5.svg' %}" alt="Star Design">
+            </div>
+        </div>
+        <div class="section-contnet container-image-me">
+            <img src="{% static 'Images/Me.png' %}" alt="Fazel Momeni Picture" class="image-me">
+        </div>
+    </div>
+</main>
+</body>
+</html>
