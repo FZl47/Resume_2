@@ -1,0 +1,100 @@
+{% extends 'base_template.html' %}
+
+{% block Title %}
+    {{ information.get_full_name }} | Resume
+{% endblock %}
+
+{% block Content %}
+    <main class="main">
+        <div class="container gutter-top gutter-bottom">
+            <div class="row sticky-parent">
+                <!-- Sidebar -->
+                {% include 'components/sidebar.html' %}
+                <!-- Content -->
+                <div class="col-12 col-md-12 col-xl-9">
+                    <div class="box-outer">
+                        <!-- Menu -->
+                        {% include 'components/nav-menu.html' with type_page='resume' %}
+                        <!-- About -->
+                        <div class="pb-3">
+                            <h1 class="title title-section title--h1 title__separate">رزومه</h1>
+                        </div>
+
+                        <!-- Educations -->
+                        {% if educations %}
+                            <h2 class="title title-section title--h2">
+                                تحصیلات
+                                <span class="box box--s2 icon-box">
+                                <i class="fa fa-graduation-cap icon-gold"></i>
+                            </span>
+                            </h2>
+                            <div class="timeline">
+                                {% for education in educations %}
+                                    <!-- Item -->
+                                    <article class="timeline__item">
+                                        <h5 class="title title--h4 timeline__title">{{ education.title }}</h5>
+                                        <span class="timeline__period">{{ education.date_range }}</span>
+                                        {% if education.description %}
+                                            <p class="timeline__description">
+                                                {{ education.description }}
+                                            </p>
+                                        {% endif %}
+                                    </article>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <!-- Experience -->
+                        {% if experiences %}
+                            <h2 class="title title-section title--h2">
+                                تجربیات
+                                <span class="box box--s2 icon-box"><i
+                                        class="fa fa-star icon-gold"></i>
+                            </span>
+                            </h2>
+                            <div class="timeline">
+                                {% for experience in experiences %}
+                                    <!-- Item -->
+                                    <article class="timeline__item">
+                                        <h5 class="title title--h4 timeline__title">{{ experience.title }}</h5>
+                                        <span class="timeline__period">{{ experience.date_range }}</span>
+                                        <p class="timeline__description">
+                                            {{ experience.description }}
+                                        </p>
+                                    </article>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <!-- Skills -->
+                        <h2 class="title title-section title--h2 mt-3">مهارت ها</h2>
+                        <div class="box box--s2 box-inner mb-0">
+                            {% for skill in skills %}
+                                <div class="progress">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="progress-text"><span>{{ skill.title }}</span> {{ skill.percentage }}%
+                                        </div>
+                                        {% if skill.linked %}
+                                            <div class="mb-2">
+                                                <a href="{% url 'public:worksamples' %}#filter&category={{ skill.get_slug }}">
+                                                    <i class="link-success fa fa-file-code-o"></i>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="progress-bar">
+                                    <span role="progressbar" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0"
+                                          aria-valuemax="100">
+                                    </span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div><!-- Content -->
+            </div><!-- sticky-parent -->
+        </div><!-- container -->
+    </main>
+{% endblock %}
+
+

@@ -1,0 +1,87 @@
+{% extends 'base_template.html' %}
+
+{% block Title %}
+    {{ information.get_full_name }} | Contact me
+{% endblock %}
+
+{% block Content %}
+    <main class="main">
+        <div class="container gutter-top gutter-bottom">
+            <div class="row sticky-parent">
+                <!-- Sidebar -->
+                {% include 'components/sidebar.html' %}
+
+                <!-- Content -->
+                <div class="col-12 col-md-12 col-xl-9">
+                    <div class="box-outer">
+                        <!-- Menu -->
+                        {% include 'components/nav-menu.html' with type_page='contact_me' %}
+
+                        <!-- About -->
+                        <div class="pb-0 pb-sm-2">
+                            <h1 class="title title-section title--h1 title__separate">ارتباط با من</h1>
+                        </div>
+                    
+                        {% if contact_me_is_sended %}
+                            <div class="message-sended">
+                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                </svg>
+                                <h5>
+                                    پیام شما با موفقیت ثبت شد
+                                </h5>
+                            </div>
+                        {% else %}
+                            <!-- Contact -->
+                            <h2 class="title text-center mb-4 title--h2">با من در ارتباط باشید</h2>
+                            <form id="contact-form" method="post" action="{% url 'public:contact_me' %}"
+                                  class="contact-form" data-toggle="validator" dir="rtl">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="form-group col-12 col-md-6">
+                                        <input type="text" class="input form-control" id="nameContact"
+                                               name="name"
+                                               placeholder="نام و نام خانوادگی" required="required" autocomplete="on"
+                                               oninvalid="setCustomValidity('لطفا فیلد را به درستی پر نمایید')"
+                                               onkeyup="setCustomValidity('')">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group col-12 col-md-6">
+                                        <input type="email" class="input form-control" id="emailContact"
+                                               name="email"
+                                               placeholder="ایمیل" required="required" autocomplete="on"
+                                               oninvalid="setCustomValidity('ایمیل صحیح نیست لطفا به درستی پر نمایید')"
+                                               onkeyup="setCustomValidity('')">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group col-12 col-md-12">
+                                    <textarea class="textarea form-control" id="messageContact" name="message"
+                                              placeholder="پیام شما" rows="4" required="required"
+                                              oninvalid="setCustomValidity('لطفا فیلد را به درستی پر نمایید')"
+                                              onkeyup="setCustomValidity('')"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 order-2 order-md-1 text-center text-md-start">
+                                        <div id="validator-contact" class="hidden"></div>
+                                    </div>
+                                    <div class="col-12 col-md-6 order-1 order-md-2 text-left" dir="ltr">
+                                        <button type="submit" class="btn">
+                                            <i class="fa fa-send"></i>
+                                            &nbsp;
+                                            ارسال
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        {% endif %}
+                    </div><!-- /box-outer -->
+                </div><!-- /col -->
+            </div><!-- /sticky-parent -->
+        </div><!-- /container -->
+    </main>
+{% endblock %}
+
+

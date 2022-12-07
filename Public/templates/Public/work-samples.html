@@ -1,0 +1,94 @@
+{% extends 'base_template.html' %}
+
+{% block Title %}
+    {{ information.get_full_name }} | work samples
+{% endblock %}
+
+{% block Content %}
+    <main class="main">
+        <div class="container gutter-top gutter-bottom">
+            <div class="row sticky-parent">
+                <!-- Sidebar -->
+                {% include 'components/sidebar.html' %}
+
+                <!-- Content -->
+                <div class="col-12 col-md-12 col-xl-9">
+                    <div class="box-outer pb-0">
+                        <!-- Menu -->
+                        {% include 'components/nav-menu.html' with type_page='worksamples' %}
+
+                        <!-- About -->
+                        <div class="pb-3">
+                            <h1 class="title title-section title--h1 title__separate">نمونه کارها</h1>
+                        </div>
+
+                        <!-- Filter -->
+                        <div class="select text-right mb-5">
+                            <span class="placeholder">دسته بندی را انتخاب کنید</span>
+                            <ul class="filter">
+                                <li class="filter__item">دسته بندی ها</li>
+                                <li class="filter__item active" data-filter="*"><a class="filter__link active"
+                                                                                   href="#filter">همه</a></li>
+                                {% for skill in skills %}
+                                    {% if skill.linked %}
+                                        <li class="filter__item" data-filter=".category-{{ skill.id }}"><a
+                                                class="filter__link"
+                                                href="#filter">{{ skill.get_label }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <input type="hidden" name="changemetoo"/>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div class="gallery-grid js-masonry js-filter-container text-center">
+                            <div class="gutter-sizer"></div>
+                            {% for worksample in worksamples %}
+                                <!-- Item  -->
+                                <div class="gallery-grid__item
+                                           {% for skill in worksample.skills.all %}
+                                                category-{{ skill.id }}
+                                           {% endfor %}
+                                    ">
+                                    <a href="{{ worksample.get_absolute_url }}" target="_blank">
+                                        <div class="gallery-grid__image-wrap">
+                                            <img class="gallery-grid__image cover lazyload"
+                                                 src="{{ worksample.get_cover }}" alt="{{ worksample.title }}"/>
+                                        </div>
+                                        <div class="gallery-grid__caption">
+                                            <h3 class="title gallery-grid__title">{{ worksample.title }}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div><!-- /Gallery -->
+                    </div>
+                </div><!-- Content -->
+            </div><!-- sticky-parent -->
+        </div><!-- container -->
+    </main>
+{% endblock %}
+
+{% block Script %}
+    <script>
+        function get_parametr_url(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if (results == null)
+                return "";
+            else
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        $(document).ready(function () {
+            let category_id = get_parametr_url('category')
+            if (category_id) {
+                category_id = category_id.split('-')
+                category_id = category_id[category_id.length - 1]
+                document.querySelector(`.filter__item[data-filter=".category-${category_id}"]`).click()
+            }
+        });
+    </script>
+{% endblock %}
