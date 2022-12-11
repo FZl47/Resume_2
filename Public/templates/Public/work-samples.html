@@ -29,13 +29,11 @@
                                 <li class="filter__item">دسته بندی ها</li>
                                 <li class="filter__item active" data-filter="*"><a class="filter__link active"
                                                                                    href="#filter">همه</a></li>
-                                {% for skill in skills %}
-                                    {% if skill.linked %}
-                                        <li class="filter__item" data-filter=".category-{{ skill.id }}"><a
+                                {% for category in categories %}
+                                        <li class="filter__item" data-filter=".category-{{ category.id }}"><a
                                                 class="filter__link"
-                                                href="#filter">{{ skill.get_label }}</a>
+                                                href="#filter">{{ category.title }}</a>
                                         </li>
-                                    {% endif %}
                                 {% endfor %}
                             </ul>
                             <input type="hidden" name="changemetoo"/>

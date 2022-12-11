@@ -76,7 +76,7 @@
                                         </div>
                                         {% if skill.linked %}
                                             <div class="mb-2">
-                                                <a href="{% url 'public:worksamples' %}#filter&category={{ skill.get_slug }}">
+                                                <a href="{% url 'public:worksamples' %}#filter&category={{ skill.get_slug_category }}">
                                                     <i class="link-success fa fa-file-code-o"></i>
                                                 </a>
                                             </div>

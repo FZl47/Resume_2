@@ -72,6 +72,12 @@ class Review(mixins_cache.CacheMixin, models.Model):
         return self.image
 
 
+class Category(models.Model):
+    title = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title
+
 
 class SkillManager(models.Manager):
     def get_queryset(self):
@@ -80,7 +86,7 @@ class SkillManager(models.Manager):
 class Skill(mixins_cache.CacheMixin, models.Model):
     title = models.CharField(max_length=50)
     percentage = models.IntegerField()
-    label_category = models.CharField(max_length=50,null=True,blank=True)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     is_showing = models.BooleanField(default=True)
     # this field makes object can be filtred or show as category
     linked = models.BooleanField(default=True)
@@ -90,15 +96,10 @@ class Skill(mixins_cache.CacheMixin, models.Model):
     def __str__(self):
         return self.title
 
-    def get_slug(self):
-        title = self.title.replace(' ','-')
-        return f"{title}-{self.id}"
+    def get_slug_category(self):
+        title = self.category.title.replace(' ','-')
+        return f"{title}-{self.category.id}"
 
-    def get_label(self):
-        label = self.label_category
-        if not label:
-            label = self.title
-        return label
 
 
 class WorkSampleManager(models.Manager):

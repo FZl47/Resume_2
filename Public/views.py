@@ -38,7 +38,8 @@ def worksamples(request):
     context = {
         'information': get_information_obj(),
         'worksamples': models.WorkSample.objects.all(),
-        'skills': models.Skill.objects.all()
+        'skills': models.Skill.objects.all(),
+        'categories': models.Category.objects.filter(skill__gt=0),
     }
     return render(request, 'Public/work-samples.html', context)
 

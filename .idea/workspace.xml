@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5f8351d-0080-4e5d-8908-642ac53af503" name="Default Changelist" comment="" />
+    <list default="true" id="a5f8351d-0080-4e5d-8908-642ac53af503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Public/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/migrations/0002_rename_image_name_review_image_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Public/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/templates/Public/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/templates/Public/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/templates/Public/work-samples.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/templates/Public/work-samples.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Public/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Static/styles/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +33,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.stylelint" value="" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,10 +53,22 @@
       <option name="presentableId" value="Default" />
       <updated>1670417698203</updated>
       <workItem from="1670417720635" duration="43000" />
+      <workItem from="1670748013369" duration="607000" />
+      <workItem from="1670748636885" duration="955000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1670748616633">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1670748616633" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1670748567884">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1670748567884" />
   </component>
 </project>

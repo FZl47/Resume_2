@@ -3535,7 +3535,7 @@ button:focus {
 }
 
 .message-sended h5 {
-    transform: translateY(-30px);
+    transform: translateY(-22px);
     color: #eee;
 }
 
