@@ -3099,7 +3099,7 @@ button:focus {
 .swiper-slide-project img {
     -o-object-fit: cover;
     object-fit: cover;
-    height: 300px !important;
+    height: 140px !important;
     width: 100%;
 }
 
