@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f8351d-0080-4e5d-8908-642ac53af503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/templates/Public/work-sample-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/templates/Public/work-sample-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Static/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,7 @@
       <workItem from="1670748013369" duration="607000" />
       <workItem from="1670748636885" duration="1481000" />
       <workItem from="1671846175708" duration="24000" />
-      <workItem from="1675132395396" duration="6303000" />
+      <workItem from="1675132395396" duration="6912000" />
     </task>
     <servers />
   </component>
@@ -63,9 +64,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1670748616633" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1675140497699">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1675141108694">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1675140497699" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1675141108694" />
   </component>
 </project>
