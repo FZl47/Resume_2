@@ -28,6 +28,7 @@ def resume(request):
     context = {
         'information': get_information_obj(),
         'experiences': models.Experience.objects.all(),
+        'experience_skills': models.ExperienceSkill.objects.all(),
         'educations': models.Education.objects.all(),
         'skills': models.Skill.objects.filter(is_showing=True).all().order_by('-percentage')
     }
@@ -39,7 +40,7 @@ def worksamples(request):
         'information': get_information_obj(),
         'worksamples': models.WorkSample.objects.all(),
         'skills': models.Skill.objects.all(),
-        'categories': models.Category.objects.filter(skill__gt=0),
+        'categories': models.Category.objects.filter(skill__gt=0).distinct(),
     }
     return render(request, 'Public/work-samples.html', context)
 

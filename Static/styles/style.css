@@ -1109,6 +1109,13 @@ button:focus {
     margin-bottom: 1.875rem;
 }
 
+.box-exp{
+    border: 1px solid var(--color-border);
+    padding: 5px 9px;
+    margin: 4px;
+    border-radius: 50px;
+}
+
 @media only screen and (max-width: 580px) {
     .box-inner {
         border-radius: var(--radius-14);

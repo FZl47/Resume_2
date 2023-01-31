@@ -204,6 +204,15 @@ class Experience(mixins_cache.CacheMixin, models.Model):
     def __str__(self):
         return self.title
 
+class ExperienceSkill(mixins_cache.CacheMixin, models.Model):
+    description = models.TextField(null=True,blank=True)
+
+    class Meta:
+        ordering = '-id',
+
+    def __str__(self):
+        return self.description[:20]
+
 
 class TelegramBot(models.Model):
     chat_id = models.CharField(max_length=20)
