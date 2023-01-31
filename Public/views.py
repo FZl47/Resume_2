@@ -29,7 +29,7 @@ def resume(request):
         'information': get_information_obj(),
         'experiences': models.Experience.objects.all(),
         'educations': models.Education.objects.all(),
-        'skills': models.Skill.objects.filter(is_showing=True).all()
+        'skills': models.Skill.objects.filter(is_showing=True).all().order_by('-percentage')
     }
     return render(request, 'Public/resume.html', context)
 

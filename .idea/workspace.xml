@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f8351d-0080-4e5d-8908-642ac53af503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Public/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/migrations/0002_rename_image_name_review_image_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Public/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/templates/Public/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/templates/Public/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/templates/Public/work-samples.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/templates/Public/work-samples.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/Public/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Public/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Static/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +47,9 @@
       <updated>1670417698203</updated>
       <workItem from="1670417720635" duration="43000" />
       <workItem from="1670748013369" duration="607000" />
-      <workItem from="1670748636885" duration="955000" />
+      <workItem from="1670748636885" duration="1481000" />
+      <workItem from="1671846175708" duration="24000" />
+      <workItem from="1675132395396" duration="1215000" />
     </task>
     <servers />
   </component>

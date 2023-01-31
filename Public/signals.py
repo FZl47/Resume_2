@@ -4,6 +4,9 @@ from django.core.mail import send_mail
 from django.dispatch import receiver
 from django.conf import settings
 from . import models
+from MyResume.task_bg import Loop, Task
+
+loop = Loop()
 
 
 @receiver(post_save, sender=models.Contact)
@@ -44,8 +47,9 @@ def send_notification(sender, instance, created, **kwargs):
 
 
 def send_with_email(subject, content):
-    send_mail(subject, content, settings.EMAIL_HOST_USER, [settings.EMAIL_USER_RECEIVE])
-
+    task_send_email = Task(send_mail, (subject, content, settings.EMAIL_HOST_USER, [settings.EMAIL_USER_RECEIVE]))
+    loop.add(task_send_email)
+    loop.start()
 
 def send_with_telegram(telegram_obj, content):
     def send(content):
@@ -59,3 +63,4 @@ def send_with_telegram(telegram_obj, content):
             send(content)
         except:
             pass
+
