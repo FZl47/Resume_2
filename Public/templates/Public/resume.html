@@ -87,7 +87,7 @@
                         {% for skill in skills %}
                         <div class="progress">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="progress-text"><span>{{ skill.title }}</span> {{ skill.percentage }}%
+                                <div class="progress-text"><span>{{ skill.title }}</span> <span style="font-size:80%;color:gray">{{ skill.percentage }}%</span>
                                 </div>
                                 {% if skill.linked %}
                                 <div class="mb-2">
