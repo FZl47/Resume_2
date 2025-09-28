@@ -1,73 +1,73 @@
 {% extends 'base_template.html' %}
 
 {% block Title %}
-    {{ information.get_full_name }}
+{{ information.get_full_name }}
 {% endblock %}
 
 {% block Content %}
-    <main class="main">
-        <div class="container gutter-top gutter-bottom">
-            <div class="row sticky-parent">
-                <!-- Sidebar -->
-                {% include 'components/sidebar.html' %}
-                <!-- Content -->
-                <div class="col-12 col-md-12 col-xl-9">
-                    <div class="box-outer">
-                        <!-- Menu -->
-                        {% include 'components/nav-menu.html' with type_page='home' %}
+<main class="main">
+    <div class="container gutter-top gutter-bottom">
+        <div class="row sticky-parent">
+            <!-- Sidebar -->
+            {% include 'components/sidebar.html' %}
+            <!-- Content -->
+            <div class="col-12 col-md-12 col-xl-9">
+                <div class="box-outer">
+                    <!-- Menu -->
+                    {% include 'components/nav-menu.html' with type_page='home' %}
 
-                        <!-- About -->
-                        <h1 class="title title-section title--h1 title__separate">درباره من</h1>
-                        <div class="text-right font-vazir" dir="rtl" style="line-height: 32px;text-align: justify">
-                            {{ information.about|safe }}
-                        </div>
-                        <br>
-                        <!-- Certificates -->
-                        {% if certificates %}
-                            <div class="certificates" dir="rtl">
-                                <h2 class="title title-section title__separate title--h2">مدرک ها</h2>
-                                <div class="swiper-container js-carousel-review text-center">
-                                    <div class="swiper-wrapper">
-                                        <!-- Item review -->
-                                        {% for certificate in certificates %}
-                                            <div class="swiper-slide certificate box box--s2 box-inner">
-                                                <a {% if certificate.link %}href="{{ certificate.link }}"{% endif %}><img
-                                                        src="{{ certificate.get_image }}"
-                                                        alt="{{ certificate.title }}"/></a>
-                                                <h6 class="certificate-title">{{ certificate.title }}</h6>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                    <div class="swiper-pagination"></div>
+                    <!-- About -->
+                    <h1 class="title title-section title--h1 title__separate">About Me</h1>
+                    <div class="text-right font-vazir" dir="rtl" style="line-height: 32px;text-align: justify">
+                        {{ information.about|safe }}
+                    </div>
+                    <br>
+                    <!-- Certificates -->
+                    {% if certificates %}
+                    <div class="certificates" dir="rtl">
+                        <h2 class="title title-section title__separate title--h2">Certificates</h2>
+                        <div class="swiper-container js-carousel-review text-center">
+                            <div class="swiper-wrapper">
+                                <!-- Item review -->
+                                {% for certificate in certificates %}
+                                <div class="swiper-slide certificate box box--s2 box-inner">
+                                    <a {% if certificate.link %}href="{{ certificate.link }}" {% endif %}><img
+                                            src="{{ certificate.get_image }}"
+                                            alt="{{ certificate.title }}"/></a>
+                                    <h6 class="certificate-title">{{ certificate.title }}</h6>
                                 </div>
+                                {% endfor %}
                             </div>
-                        {% endif %}
-                        <!-- Clients -->
-                        {% if reviews %}
-                            <h2 class="title title-section title__separate title--h2 mt-4">نظر برخی از عزیزان</h2>
-                            <div class="swiper-container js-carousel-clients text-right">
-                                <div class="swiper-wrapper">
-                                    {% for review in reviews %}
-                                        <!-- Item client -->
-                                        <div class="swiper-slide text-right review-item box box--s2 box-inner js-open-review review"
-                                             data-effect="mfp-zoom-out">
-                                            <figure class="box box-avatar box-avatar--not-border">
-                                                <img src="{{ review.get_image }}"
-                                                     alt="{{ review.name }}">
-                                            </figure>
-                                            <h4 class="title title--h3 text-right">{{ review.name }}</h4>
-                                            <p class="review-item__caption text-right">{{ review.description|default_if_none:'' }}</p>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div><!-- /swiper-container -->
-                        {% endif %}
-                    </div><!-- box-outer -->
-                </div><!-- Content -->
-            </div><!-- sticky-parent -->
-        </div><!-- container -->
-    </main>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <!-- Clients -->
+                    {% if reviews %}
+                    <h2 class="title title-section title__separate title--h2 mt-4">Opinions of some dear ones</h2>
+                    <div class="swiper-container js-carousel-clients text-right">
+                        <div class="swiper-wrapper">
+                            {% for review in reviews %}
+                            <!-- Item client -->
+                            <div class="swiper-slide text-right review-item box box--s2 box-inner js-open-review review"
+                                 data-effect="mfp-zoom-out">
+                                <figure class="box box-avatar box-avatar--not-border">
+                                    <img src="{{ review.get_image }}"
+                                         alt="{{ review.name }}">
+                                </figure>
+                                <h4 class="title title--h3 text-right">{{ review.name }}</h4>
+                                <p class="review-item__caption text-right">{{ review.description|default_if_none:'' }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div><!-- /swiper-container -->
+                    {% endif %}
+                </div><!-- box-outer -->
+            </div><!-- Content -->
+        </div><!-- sticky-parent -->
+    </div><!-- container -->
+</main>
 
 
 {% endblock %}

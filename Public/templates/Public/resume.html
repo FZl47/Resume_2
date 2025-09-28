@@ -17,13 +17,13 @@
                     {% include 'components/nav-menu.html' with type_page='resume' %}
                     <!-- About -->
                     <div class="pb-3">
-                        <h1 class="title title-section title--h1 title__separate">رزومه</h1>
+                        <h1 class="title title-section title--h1 title__separate">Resume</h1>
                     </div>
 
                     <!-- Educations -->
                     {% if educations %}
                     <h2 class="title title-section title--h2">
-                        تحصیلات
+                        Education
                         <span class="box box--s2 icon-box">
                                 <i class="fa fa-graduation-cap icon-gold"></i>
                             </span>
@@ -68,7 +68,7 @@
                     <!-- Experience -->
                     {% if experience_skills %}
                     <h2 class="title title-section title--h2">
-                        تجربیات ابزاری
+                        Tool Experiences
                         <span class="box box--s2 icon-box"><i
                                 class="fa fa-wrench icon-gold"></i>
                                 </span>
@@ -82,7 +82,7 @@
                     {% endif %}
 
                     <!-- Skills -->
-                    <h2 class="title title-section title--h2 mt-3">مهارت ها</h2>
+                    <h2 class="title title-section title--h2 mt-3">Skills</h2>
                     <div class="box box--s2 box-inner mb-0">
                         {% for skill in skills %}
                         <div class="progress">

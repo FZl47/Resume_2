@@ -19,7 +19,7 @@
 
                         <!-- About -->
                         <div class="pb-0 pb-sm-2">
-                            <h1 class="title title-section title--h1 title__separate">ارتباط با من</h1>
+                            <h1 class="title title-section title--h1 title__separate">Contact Me</h1>
                         </div>
                     
                         {% if contact_me_is_sended %}
@@ -29,12 +29,12 @@
                                     <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                                 </svg>
                                 <h5>
-                                    پیام شما با موفقیت ثبت شد
+                                    Your Message Submited Successfully!
                                 </h5>
                             </div>
                         {% else %}
                             <!-- Contact -->
-                            <h2 class="title text-center mb-4 title--h2">با من در ارتباط باشید</h2>
+                            <h2 class="title text-center mb-4 title--h2">Keep in touch with me</h2>
                             <form id="contact-form" method="post" action="{% url 'public:contact_me' %}"
                                   class="contact-form" data-toggle="validator" dir="rtl">
                                 {% csrf_token %}
@@ -42,23 +42,23 @@
                                     <div class="form-group col-12 col-md-6">
                                         <input type="text" class="input form-control" id="nameContact"
                                                name="name"
-                                               placeholder="نام و نام خانوادگی" required="required" autocomplete="on"
-                                               oninvalid="setCustomValidity('لطفا فیلد را به درستی پر نمایید')"
+                                               placeholder="Name" required="required" autocomplete="on"
+                                               oninvalid="setCustomValidity('Please enter field correctly')"
                                                onkeyup="setCustomValidity('')">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group col-12 col-md-6">
                                         <input type="email" class="input form-control" id="emailContact"
                                                name="email"
-                                               placeholder="ایمیل" required="required" autocomplete="on"
-                                               oninvalid="setCustomValidity('ایمیل صحیح نیست لطفا به درستی پر نمایید')"
+                                               placeholder="Email" required="required" autocomplete="on"
+                                               oninvalid="setCustomValidity('Email is wrong. Please enter field correctly')"
                                                onkeyup="setCustomValidity('')">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group col-12 col-md-12">
                                     <textarea class="textarea form-control" id="messageContact" name="message"
-                                              placeholder="پیام شما" rows="4" required="required"
-                                              oninvalid="setCustomValidity('لطفا فیلد را به درستی پر نمایید')"
+                                              placeholder="Message" rows="4" required="required"
+                                              oninvalid="setCustomValidity('Please enter field correctly')"
                                               onkeyup="setCustomValidity('')"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -71,7 +71,7 @@
                                         <button type="submit" class="btn">
                                             <i class="fa fa-send"></i>
                                             &nbsp;
-                                            ارسال
+                                            Send
                                         </button>
                                     </div>
                                 </div>

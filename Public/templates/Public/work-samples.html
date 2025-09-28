@@ -19,16 +19,16 @@
 
                         <!-- About -->
                         <div class="pb-3">
-                            <h1 class="title title-section title--h1 title__separate">نمونه کارها</h1>
+                            <h1 class="title title-section title--h1 title__separate">Projects</h1>
                         </div>
 
                         <!-- Filter -->
                         <div class="select text-right mb-5">
-                            <span class="placeholder">دسته بندی را انتخاب کنید</span>
+                            <span class="placeholder">Select Category</span>
                             <ul class="filter">
-                                <li class="filter__item">دسته بندی ها</li>
+                                <li class="filter__item">Categories</li>
                                 <li class="filter__item active" data-filter="*"><a class="filter__link active"
-                                                                                   href="#filter">همه</a></li>
+                                                                                   href="#filter">All</a></li>
                                 {% for category in categories %}
                                         <li class="filter__item" data-filter=".category-{{ category.id }}"><a
                                                 class="filter__link"
