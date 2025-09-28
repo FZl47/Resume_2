@@ -3097,9 +3097,8 @@ button:focus {
 }
 
 .swiper-slide-project img {
-    -o-object-fit: cover;
     object-fit: cover;
-    height: 140px !important;
+    height: 200px ;
     width: 100%;
 }
 
@@ -3641,6 +3640,15 @@ button:focus {
     border-radius: 5px;
 }
 
-.scroll-line{
+.scroll-line {
     display: none;
+}
+
+*:-webkit-full-screen {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto!important;
+    height: auto!important;
+    object-fit: none!important;
+    -o-object-fit: none!important;
 }

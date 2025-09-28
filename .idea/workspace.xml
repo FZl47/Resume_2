@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a5f8351d-0080-4e5d-8908-642ac53af503" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/templates/Public/work-sample-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/templates/Public/work-sample-detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Static/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static_Files/media/APV1E0ZMWK/.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static_Files/media/DMWLK6OF1W/.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static_Files/media/GRKIWG9O8Z/.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static_Files/media/K98XA3HO6I/.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static_Files/media/S3PS100GB8/.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static_Files/media/gallery/OUFQ6AGDMS.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Static_Files/media/gallery/UK4ZXAIY4R.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +26,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="en" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2IaRR4AnozJLgWBh5i8SyAwWmjT" />
@@ -21,21 +39,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.stylelint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.stylelint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,9 +62,6 @@
       <workItem from="1675132395396" duration="7278000" />
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1670748616633">
