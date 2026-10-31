@@ -996,6 +996,33 @@ button:focus {
     flex: 1;
 }
 
+/* Sidebar contact info: show the full value (wrap instead of cutting it with "...") */
+.sidebar .details-info__item {
+    white-space: normal;
+}
+
+.sidebar .contacts-block__info .text-overflow {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+}
+
+/* values that are always left-to-right (email, phone) but must stick to the start side in RTL */
+.sidebar .ltr-value {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .sidebar .ltr-value {
+    text-align: right;
+}
+
+/* labels are right-aligned by default (written for Persian); in English they follow the text */
+html[dir="ltr"] .sidebar .overhead {
+    text-align: left;
+}
+
 /* Social */
 .social {
     text-align: center;
@@ -1150,7 +1177,7 @@ button:focus {
 }
 
 .details-info .icon-box {
-    margin-right: 6px;
+    margin-inline-end: 6px;
 
 }
 
@@ -1304,7 +1331,7 @@ button:focus {
 /* Details info */
 .details-info {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
     margin-bottom: 0.5rem;
 }
 

@@ -26,7 +26,7 @@
                                                 class="icon-gold fa fa-envelope"></i></span>
                                         <div class="contacts-block__info">
                                             <span class="overhead">{% trans 'Email' %}</span>
-                                            <a class="text-overflow" href="mailto:{{ information.email }}"
+                                            <a class="text-overflow ltr-value" href="mailto:{{ information.email }}"
                                                title="{{ information.email }}">{{ information.email }}</a>
                                         </div>
                                     </li>
@@ -37,7 +37,7 @@
                                         <span class="box box--s2 icon-box"><i class="icon-gold fa fa-phone"></i></span>
                                         <div class="contacts-block__info">
                                             <span class="overhead">{% trans 'Phone Number' %}</span>
-                                            <span class="text-overflow"
+                                            <span class="text-overflow ltr-value"
                                                   title="{{ information.phone_number }}">{{ information.phone_number }}</span>
                                         </div>
                                     </li>
@@ -92,4 +92,4 @@
                             </div>
                         </div>
                     </div>
-                </aside>
+                </aside>
