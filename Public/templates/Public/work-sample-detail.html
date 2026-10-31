@@ -1,7 +1,8 @@
 {% extends 'base_template.html' %}
+{% load i18n FilterTags %}
 
 {% block Title %}
-{{ worksample.title }}
+{{ worksample|tr:'title' }}
 {% endblock %}
 
 {% block Content %}
@@ -13,28 +14,28 @@
 
             <!-- Content -->
             <div class="col-12 col-md-12 col-xl-9">
-                <div class="box-outer" style="text-align: right">
+                <div class="box-outer text-right">
                     <!-- Menu -->
                     {% include 'components/nav-menu.html' with type_page='worksample' %}
 
                     <!-- About -->
                     <div class="pb-3">
-                        <h1 class="title title-section title--h1 title__separate">نمونه کار</h1>
+                        <h1 class="title title-section title--h1 title__separate">{% trans 'Project' %}</h1>
                     </div>
 
                     <!-- Project details -->
                     <a class="btn-back text-right d-block" href="{% url 'public:worksamples' %}">
-                        بازگشت به نمونه کارها
-                        <i class="fa fa-angle-right"></i>
+                        {% trans 'Back to Projects' %}
+                        <i class="fa {% if LANGUAGE_BIDI %}fa-angle-right{% else %}fa-angle-left{% endif %}"></i>
                     </a>
 
                     <header class="header-project">
                         <h1 class="title title--h1 text-right d-block w-100">
-                            {{ worksample.title }}
+                            {{ worksample|tr:'title' }}
                         </h1>
                         <div class="header-project__image-wrap">
                             <img class="cover lazyload" src="{{ worksample.get_cover }}"
-                                 alt="{{ worksample.title }}"/>
+                                 alt="{{ worksample|tr:'title' }}"/>
                         </div>
                     </header>
 
@@ -42,7 +43,7 @@
                         <!-- Skills -->
                         <li class="details-info__item">
                             <div class="details-info__info">
-                                <span class="overhead">تکنولوژی ها</span>
+                                <span class="overhead">{% trans 'Technologies' %}</span>
                                 {% for skill in worksample.skills.all %}
                                 <span class="skill-tag">
                                             {{ skill.title }}
@@ -54,7 +55,7 @@
                         <!-- Date -->
                         <li class="details-info__item">
                             <div class="details-info__info">
-                                <span class="overhead">تاریخ</span>
+                                <span class="overhead">{% trans 'Date' %}</span>
                                 {{ worksample.date_time_create }}
                             </div>
                             <span class="box box--s2 icon-box"><i class="fa fa-calendar icon-gold"></i></span>
@@ -62,22 +63,39 @@
                         <!-- Views -->
                         <li class="details-info__item">
                             <div class="details-info__info">
-                                <span class="overhead">بازدید ها</span>
+                                <span class="overhead">{% trans 'Views' %}</span>
                                 {{ worksample.views }}
                             </div>
                             <span class="box box--s2 icon-box"><i class="fa fa-eye icon-gold"></i></span>
                         </li>
+                        <!-- Link (optional) -->
+                        {% if worksample.link %}
+                        <li class="details-info__item">
+                            <div class="details-info__info">
+                                <span class="overhead">{% trans 'Link' %}</span>
+                                <a href="{{ worksample.link }}" target="_blank" rel="noopener noreferrer">{% trans 'Visit project' %}</a>
+                            </div>
+                            <span class="box box--s2 icon-box"><i class="fa fa-link icon-gold"></i></span>
+                        </li>
+                        {% endif %}
                     </ul>
-                    <div style="line-height: 33px" dir="rtl">
-                        {{ worksample.description|safe }}
+                    <div style="line-height: 33px">
+                        {{ worksample|tr:'description'|safe }}
                     </div>
+                    {% if worksample.link %}
+                    <div class="text-center mb-4">
+                        <a class="btn" href="{{ worksample.link }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-external-link"></i>&nbsp;{% trans 'Visit project' %}
+                        </a>
+                    </div>
+                    {% endif %}
                     <div class="swiper-container js-carousel-project ">
                         <div class="swiper-wrapper project-gallery">
                             {% for image in worksample.get_images %}
                             <!-- Item -->
                             <figure class="swiper-slide swiper-slide-project">
                                 <img class="lazyload" src="{{ image.image.url }}" onclick="this.requestFullscreen()"
-                                     alt="{{ worksample.title }}"/>
+                                     alt="{{ worksample|tr:'title' }}"/>
 
                             </figure>
                             {% endfor %}

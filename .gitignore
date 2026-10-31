@@ -53,6 +53,7 @@ coverage.xml
 
 # Translations
 *.mo
+!locale/**/*.mo
 *.pot
 
 # Django stuff:

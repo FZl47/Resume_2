@@ -55,8 +55,11 @@ def send_with_telegram(telegram_obj, content):
     def send(content):
         bot_token = telegram_obj.token_bot
         bot_chatID = telegram_obj.chat_id
-        send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + content
-        response = requests.get(send_text)
+        requests.get(
+            f'https://api.telegram.org/bot{bot_token}/sendMessage',
+            params={'chat_id': bot_chatID, 'parse_mode': 'Markdown', 'text': content},
+            timeout=10,
+        )
 
     if telegram_obj.is_active == True:
         try:

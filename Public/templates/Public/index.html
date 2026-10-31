@@ -1,4 +1,5 @@
 {% extends 'base_template.html' %}
+{% load i18n static FilterTags %}
 
 {% block Title %}
     {{ information.get_full_name }}
@@ -17,24 +18,24 @@
                         {% include 'components/nav-menu.html' with type_page='home' %}
 
                         <!-- About -->
-                        <h1 class="title title-section title--h1 title__separate">درباره من</h1>
-                        <div class="text-right font-vazir" dir="rtl" style="line-height: 32px;text-align: justify">
-                            {{ information.about|safe }}
+                        <h1 class="title title-section title--h1 title__separate">{% trans 'About Me' %}</h1>
+                        <div class="text-right font-vazir" style="line-height: 32px;text-align: justify">
+                            {{ information|tr:"about"|safe }}
                         </div>
                         <br>
                         <!-- Certificates -->
                         {% if certificates %}
-                            <div class="certificates" dir="rtl">
-                                <h2 class="title title-section title__separate title--h2">مدرک ها</h2>
+                            <div class="certificates">
+                                <h2 class="title title-section title__separate title--h2">{% trans 'Certificates' %}</h2>
                                 <div class="swiper-container js-carousel-review text-center">
                                     <div class="swiper-wrapper">
                                         <!-- Item review -->
                                         {% for certificate in certificates %}
                                             <div class="swiper-slide certificate box box--s2 box-inner">
-                                                <a {% if certificate.link %}href="{{ certificate.link }}"{% endif %}><img
+                                                <a {% if certificate.link %}href="{{ certificate.link }}" target="_blank" rel="noopener noreferrer"{% endif %}><img
                                                         src="{{ certificate.get_image }}"
-                                                        alt="{{ certificate.title }}"/></a>
-                                                <h6 class="certificate-title">{{ certificate.title }}</h6>
+                                                        alt="{{ certificate|tr:'title' }}"/></a>
+                                                <h6 class="certificate-title">{{ certificate|tr:'title' }}</h6>
                                             </div>
                                         {% endfor %}
                                     </div>
@@ -44,7 +45,7 @@
                         {% endif %}
                         <!-- Clients -->
                         {% if reviews %}
-                            <h2 class="title title-section title__separate title--h2 mt-4">نظر برخی از عزیزان</h2>
+                            <h2 class="title title-section title__separate title--h2 mt-4">{% trans 'Opinions of some dear ones' %}</h2>
                             <div class="swiper-container js-carousel-clients text-right">
                                 <div class="swiper-wrapper">
                                     {% for review in reviews %}

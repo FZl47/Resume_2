@@ -1,0 +1,116 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "About Me"
+msgstr "درباره من"
+
+msgid "Address"
+msgstr "آدرس"
+
+msgid "All"
+msgstr "همه"
+
+msgid "Back to Projects"
+msgstr "بازگشت به نمونه کارها"
+
+msgid "Birthday"
+msgstr "تاریخ تولد"
+
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+msgid "Certificates"
+msgstr "مدرک ها"
+
+msgid "Contact Me"
+msgstr "ارتباط با من"
+
+msgid "Date"
+msgstr "تاریخ"
+
+msgid "Education"
+msgstr "تحصیلات"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Full Name"
+msgstr "نام و نام خانوادگی"
+
+msgid "I would be happy to hear your thoughts"
+msgstr "خوشحال میشم نظر خود را با من در میان بگذارید"
+
+msgid "Keep in touch with me"
+msgstr "با من در ارتباط باشید"
+
+msgid "Leave a Review"
+msgstr "ثبت نظر"
+
+msgid "Link"
+msgstr "لینک"
+
+msgid "Opinions of some dear ones"
+msgstr "نظر برخی از عزیزان"
+
+msgid "Phone Number"
+msgstr "تلفن همراه"
+
+msgid "Please fill in this field correctly"
+msgstr "لطفا فیلد را به درستی پر نمایید"
+
+msgid "Project"
+msgstr "نمونه کار"
+
+msgid "Projects"
+msgstr "نمونه کارها"
+
+msgid "Resume"
+msgstr "رزومه"
+
+msgid "Select Category"
+msgstr "دسته بندی را انتخاب کنید"
+
+msgid "Send"
+msgstr "ارسال"
+
+msgid "Show Information"
+msgstr "نمایش اطلاعات"
+
+msgid "Skills"
+msgstr "مهارت ها"
+
+msgid "Technologies"
+msgstr "تکنولوژی ها"
+
+msgid "The email is not valid, please enter it correctly"
+msgstr "ایمیل صحیح نیست لطفا به درستی پر نمایید"
+
+msgid "Tools Experience"
+msgstr "تجربیات ابزاری"
+
+msgid "Views"
+msgstr "بازدید ها"
+
+msgid "Visit project"
+msgstr "مشاهده پروژه"
+
+msgid "Work Experience"
+msgstr "تجربیات کاری"
+
+msgid "Your Message"
+msgstr "پیام شما"
+
+msgid "Your Review"
+msgstr "نظر شما"
+
+msgid "Your message has been submitted successfully"
+msgstr "پیام شما با موفقیت ثبت شد"
+
+msgid "Your valuable review has been submitted successfully"
+msgstr "نظر ارزشمند شما با موفقیت ثبت شد"

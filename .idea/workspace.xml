@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f8351d-0080-4e5d-8908-642ac53af503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Public/templates/Public/work-sample-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/templates/Public/work-sample-detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Static/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Static_Files/media/APV1E0ZMWK/.jpg" beforeDir="false" />
@@ -16,6 +17,8 @@
       <change beforePath="$PROJECT_DIR$/Static_Files/media/gallery/OUFQ6AGDMS.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Static_Files/media/gallery/UK4ZXAIY4R.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_template.html" afterDir="false" />
+=======
+>>>>>>> 53e019302a3461923c110b6af5fe629704787ed3
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2IaRR4AnozJLgWBh5i8SyAwWmjT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,10 +47,28 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
+=======
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "en",
+    "last_opened_file_path": "F:/Project/MyResume/V2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+>>>>>>> 53e019302a3461923c110b6af5fe629704787ed3
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -59,10 +83,13 @@
       <workItem from="1670748013369" duration="607000" />
       <workItem from="1670748636885" duration="1481000" />
       <workItem from="1671846175708" duration="24000" />
-      <workItem from="1675132395396" duration="7278000" />
+      <workItem from="1675132395396" duration="8064000" />
+      <workItem from="1675291786623" duration="125000" />
+      <workItem from="1759017274625" duration="2902000" />
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1670748616633">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -72,5 +99,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1675141501879" />
+=======
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+>>>>>>> 53e019302a3461923c110b6af5fe629704787ed3
   </component>
 </project>

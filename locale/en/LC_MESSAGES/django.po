@@ -1,0 +1,116 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "About Me"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Back to Projects"
+msgstr ""
+
+msgid "Birthday"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Certificates"
+msgstr ""
+
+msgid "Contact Me"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Education"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Full Name"
+msgstr ""
+
+msgid "I would be happy to hear your thoughts"
+msgstr ""
+
+msgid "Keep in touch with me"
+msgstr ""
+
+msgid "Leave a Review"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Opinions of some dear ones"
+msgstr ""
+
+msgid "Phone Number"
+msgstr ""
+
+msgid "Please fill in this field correctly"
+msgstr ""
+
+msgid "Project"
+msgstr ""
+
+msgid "Projects"
+msgstr ""
+
+msgid "Resume"
+msgstr ""
+
+msgid "Select Category"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Show Information"
+msgstr ""
+
+msgid "Skills"
+msgstr ""
+
+msgid "Technologies"
+msgstr ""
+
+msgid "The email is not valid, please enter it correctly"
+msgstr ""
+
+msgid "Tools Experience"
+msgstr ""
+
+msgid "Views"
+msgstr ""
+
+msgid "Visit project"
+msgstr ""
+
+msgid "Work Experience"
+msgstr ""
+
+msgid "Your Message"
+msgstr ""
+
+msgid "Your Review"
+msgstr ""
+
+msgid "Your message has been submitted successfully"
+msgstr ""
+
+msgid "Your valuable review has been submitted successfully"
+msgstr ""

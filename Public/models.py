@@ -1,6 +1,7 @@
 from django.shortcuts import reverse
 from django.db import models
 from django.templatetags.static import static
+from django.utils.translation import get_language
 from ckeditor.fields import RichTextField
 from Public import mixins
 from Public.cache import mixins as mixins_cache
@@ -17,6 +18,12 @@ class Information(mixins_cache.CacheMixin, models.Model):
     last_name = models.CharField(max_length=100)
     work_position = models.CharField(max_length=40)
     about = RichTextField()
+    # optional English version (shown when the site language is English)
+    first_name_en = models.CharField(max_length=100, null=True, blank=True)
+    last_name_en = models.CharField(max_length=100, null=True, blank=True)
+    work_position_en = models.CharField(max_length=40, null=True, blank=True)
+    about_en = RichTextField(null=True, blank=True)
+    location_en = models.CharField(max_length=200, null=True, blank=True)
     image = models.ImageField(upload_to=upload_image_src)
     phone_number = models.CharField(max_length=20,null=True,blank=True)
     email = models.CharField(max_length=100,null=True,blank=True)
@@ -32,6 +39,8 @@ class Information(mixins_cache.CacheMixin, models.Model):
         return self.get_full_name()
 
     def get_full_name(self):
+        if get_language() == 'en' and self.first_name_en and self.last_name_en:
+            return f"{self.first_name_en} {self.last_name_en}"
         return f"{self.first_name} {self.last_name}"
 
     def get_image(self):
@@ -43,6 +52,7 @@ class Certificate(mixins_cache.CacheMixin, mixins.RemovePastFileWhenChangedMixin
     FIELDS_REMOVE_FILES = ('image',)
 
     title = models.CharField(max_length=100)
+    title_en = models.CharField(max_length=100, null=True, blank=True)
     image = models.ImageField(upload_to=upload_image_src)
     link = models.CharField(max_length=100,null=True,blank=True)
 
@@ -107,8 +117,9 @@ class WorkSampleManager(models.Manager):
     def get_by_slug(self,slug):
         id_obj = str(slug).split('-')[-1]
         try:
-            return self.get_queryset().get(id=id_obj)
-        except:return None
+            return self.get_queryset().get(id=int(id_obj))
+        except (ValueError, self.model.DoesNotExist):
+            return None
 
 
 class WorkSample(mixins_cache.CacheMixin, models.Model):
@@ -118,6 +129,10 @@ class WorkSample(mixins_cache.CacheMixin, models.Model):
     skills = models.ManyToManyField('Skill')
     date_time_create = models.DateField(auto_now_add=True)
     gallery = models.ForeignKey('Gallery',on_delete=models.CASCADE)
+    # optional link to the project (website / repository / demo)
+    link = models.URLField(max_length=300, null=True, blank=True)
+    title_en = models.CharField(max_length=100, null=True, blank=True)
+    description_en = RichTextField(null=True, blank=True)
 
     objects = WorkSampleManager()
 
@@ -185,6 +200,9 @@ class Education(mixins_cache.CacheMixin, models.Model):
     title = models.CharField(max_length=100)
     date_range = models.CharField(max_length=100,null=True,blank=True)
     description = models.TextField(null=True,blank=True)
+    title_en = models.CharField(max_length=100, null=True, blank=True)
+    date_range_en = models.CharField(max_length=100, null=True, blank=True)
+    description_en = models.TextField(null=True, blank=True)
 
     class Meta:
         ordering = '-id',
@@ -197,6 +215,9 @@ class Experience(mixins_cache.CacheMixin, models.Model):
     title = models.CharField(max_length=100)
     date_range = models.CharField(max_length=100,null=True,blank=True)
     description = models.TextField(null=True,blank=True)
+    title_en = models.CharField(max_length=100, null=True, blank=True)
+    date_range_en = models.CharField(max_length=100, null=True, blank=True)
+    description_en = models.TextField(null=True, blank=True)
 
     class Meta:
         ordering = '-id',
@@ -206,12 +227,13 @@ class Experience(mixins_cache.CacheMixin, models.Model):
 
 class ExperienceSkill(mixins_cache.CacheMixin, models.Model):
     description = models.TextField(null=True,blank=True)
+    description_en = models.TextField(null=True, blank=True)
 
     class Meta:
         ordering = '-id',
 
     def __str__(self):
-        return self.description[:20]
+        return (self.description or '')[:20]
 
 
 class TelegramBot(models.Model):

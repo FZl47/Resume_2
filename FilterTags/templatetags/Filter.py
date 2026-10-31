@@ -2,6 +2,8 @@
 
 import math
 from django import template
+from django.urls import translate_url
+from django.utils.translation import get_language
 
 register = template.Library()
 
@@ -124,3 +126,26 @@ def ListIsNone(List):
         return False
     except:
         return True
+
+
+
+@register.filter
+def tr(obj, field):
+    """
+        Returns the English value (<field>_en) when the active language is English
+        and it has been filled, otherwise the default (Persian) value.
+        Usage: {{ obj|tr:"title" }}
+    """
+    value = getattr(obj, field, '')
+    if get_language() == 'en':
+        value_en = getattr(obj, f'{field}_en', None)
+        if value_en:
+            return value_en
+    return value
+
+
+@register.simple_tag(takes_context=True)
+def lang_url(context, lang):
+    """ Same page in another language. Usage: {% lang_url 'en' %} """
+    request = context['request']
+    return translate_url(request.get_full_path(), lang)

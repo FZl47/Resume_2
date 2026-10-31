@@ -96,7 +96,7 @@ def GetDifferenceDate(Time):
 
 def ValidationText(Text,Bigger=None,Less=None,NoSpace=False):
     State = False
-    if Text is not None and Text is not '' and str(Text).strip() is not '':
+    if Text is not None and Text != '' and str(Text).strip() != '':
         State = True
         Text = str(Text)
         if Bigger != None and Less != None:

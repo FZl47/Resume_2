@@ -1,3 +1,4 @@
+{% load i18n FilterTags %}
    <aside class="col-12 col-md-12 col-xl-3">
                     <div class="sidebar box-outer sticky-column">
                         <!-- My photo -->
@@ -8,10 +9,10 @@
 
                             <div class="text-xl-center">
                                 <h3 class="title title--h3 sidebar__name">{{ information.get_full_name }}</h3>
-                                <div class="badge font-weight-bold">{{ information.work_position }}</div>
+                                <div class="badge font-weight-bold">{{ information|tr:"work_position" }}</div>
                             </div>
 
-                            <button class="btn btn--small btn--icon-right sidebar__btn js-btn-toggle "><span>نمایش اطلاعات</span><i
+                            <button class="btn btn--small btn--icon-right sidebar__btn js-btn-toggle "><span>{% trans 'Show Information' %}</span><i
                                     class="fs-4 fa fa-bars"></i></button>
                         </div>
 
@@ -24,7 +25,7 @@
                                         <span class="box box--s2 icon-box"><i
                                                 class="icon-gold fa fa-envelope"></i></span>
                                         <div class="contacts-block__info">
-                                            <span class="overhead">ایمیل</span>
+                                            <span class="overhead">{% trans 'Email' %}</span>
                                             <a class="text-overflow" href="mailto:{{ information.email }}"
                                                title="{{ information.email }}">{{ information.email }}</a>
                                         </div>
@@ -35,7 +36,7 @@
                                     <li class="details-info__item">
                                         <span class="box box--s2 icon-box"><i class="icon-gold fa fa-phone"></i></span>
                                         <div class="contacts-block__info">
-                                            <span class="overhead">تلفن همراه</span>
+                                            <span class="overhead">{% trans 'Phone Number' %}</span>
                                             <span class="text-overflow"
                                                   title="{{ information.phone_number }}">{{ information.phone_number }}</span>
                                         </div>
@@ -47,7 +48,7 @@
                                         <span class="box box--s2 icon-box"><i
                                                 class="icon-gold fa fa-calendar"></i></span>
                                         <div class="contacts-block__info">
-                                            <span class="overhead">تاریخ تولد</span>
+                                            <span class="overhead">{% trans 'Birthday' %}</span>
                                             <span class="text-overflow"
                                                   title="{{ information.birthday }}">{{ information.birthday }}</span>
                                         </div>
@@ -59,9 +60,9 @@
                                         <span class="box box--s2 icon-box"><i
                                                 class="icon-gold fa fa-map-marker"></i></span>
                                         <div class="contacts-block__info">
-                                            <span class="overhead">آدرس</span>
+                                            <span class="overhead">{% trans 'Address' %}</span>
                                             <span class="text-overflow"
-                                                  title="{{ information.location }}">{{ information.location }}</span>
+                                                  title="{{ information|tr:"location" }}">{{ information|tr:"location" }}</span>
                                         </div>
                                     </li>
                                 {% endif %}
@@ -72,20 +73,20 @@
                             <div class="social">
                                 {% if information.linkdin_id %}
                                     <a class="social__link"
-                                       href="https://www.linkedin.com/in/{{ information.linkdin_id }}"><i
+                                       href="https://www.linkedin.com/in/{{ information.linkdin_id }}" target="_blank" rel="noopener noreferrer"><i
                                             class="fa fa-linkedin"></i></a>
                                 {% endif %}
                                 {% if information.instagram_id %}
                                     <a class="social__link"
-                                       href="https://www.instagram.com/{{ information.instagram_id }}"><i
+                                       href="https://www.instagram.com/{{ information.instagram_id }}" target="_blank" rel="noopener noreferrer"><i
                                             class="fa fa-instagram"></i></a>
                                 {% endif %}
                                 {% if information.telegram_id %}
-                                    <a class="social__link" href="https://telegram.me/{{ information.telegram_id }}"><i
+                                    <a class="social__link" href="https://telegram.me/{{ information.telegram_id }}" target="_blank" rel="noopener noreferrer"><i
                                             class="fa fa-telegram"></i></a>
                                 {% endif %}
                                 {% if information.github_id %}
-                                    <a class="social__link" href="https://github.com/{{ information.github_id }}"><i
+                                    <a class="social__link" href="https://github.com/{{ information.github_id }}" target="_blank" rel="noopener noreferrer"><i
                                             class="fa fa-github"></i></a>
                                 {% endif %}
                             </div>

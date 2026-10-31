@@ -1,7 +1,8 @@
 {% extends 'base_template.html' %}
+{% load i18n static FilterTags %}
 
 {% block Title %}
-{{ information.get_full_name }} | Resume
+{{ information.get_full_name }} | {% trans 'Resume' %}
 {% endblock %}
 
 {% block Content %}
@@ -17,13 +18,13 @@
                     {% include 'components/nav-menu.html' with type_page='resume' %}
                     <!-- About -->
                     <div class="pb-3">
-                        <h1 class="title title-section title--h1 title__separate">رزومه</h1>
+                        <h1 class="title title-section title--h1 title__separate">{% trans 'Resume' %}</h1>
                     </div>
 
                     <!-- Educations -->
                     {% if educations %}
                     <h2 class="title title-section title--h2">
-                        تحصیلات
+                        {% trans 'Education' %}
                         <span class="box box--s2 icon-box">
                                 <i class="fa fa-graduation-cap icon-gold"></i>
                             </span>
@@ -32,11 +33,11 @@
                         {% for education in educations %}
                         <!-- Item -->
                         <article class="timeline__item">
-                            <h5 class="title title--h4 timeline__title">{{ education.title }}</h5>
-                            <span class="timeline__period">{{ education.date_range }}</span>
+                            <h5 class="title title--h4 timeline__title">{{ education|tr:"title" }}</h5>
+                            <span class="timeline__period">{{ education|tr:"date_range" }}</span>
                             {% if education.description %}
                             <p class="timeline__description">
-                                {{ education.description }}
+                                {{ education|tr:"description" }}
                             </p>
                             {% endif %}
                         </article>
@@ -46,7 +47,7 @@
 
                     {% if experiences %}
                     <h2 class="title title-section title--h2">
-                        تجربیات کاری
+                        {% trans 'Work Experience' %}
                         <span class="box box--s2 icon-box"><i
                                 class="fa fa-star icon-gold"></i>
                                 </span>
@@ -55,10 +56,10 @@
                         {% for experience in experiences %}
                         <!-- Item -->
                         <article class="timeline__item">
-                            <h5 class="title title--h4 timeline__title">{{ experience.title }}</h5>
-                            <span class="timeline__period">{{ experience.date_range }}</span>
+                            <h5 class="title title--h4 timeline__title">{{ experience|tr:"title" }}</h5>
+                            <span class="timeline__period">{{ experience|tr:"date_range" }}</span>
                             <p class="timeline__description">
-                                {{ experience.description }}
+                                {{ experience|tr:"description" }}
                             </p>
                         </article>
                         {% endfor %}
@@ -68,21 +69,21 @@
                     <!-- Experience -->
                     {% if experience_skills %}
                     <h2 class="title title-section title--h2">
-                        تجربیات ابزاری
+                        {% trans 'Tools Experience' %}
                         <span class="box box--s2 icon-box"><i
                                 class="fa fa-wrench icon-gold"></i>
                                 </span>
                     </h2>
                     <div class="text-right">
                         {% for experience_skill in experience_skills %}
-                        <span class="box-exp">{{ experience_skill.description }}</span>
+                        <span class="box-exp">{{ experience_skill|tr:"description" }}</span>
                         {% endfor %}
                     </div>
                     <br>
                     {% endif %}
 
                     <!-- Skills -->
-                    <h2 class="title title-section title--h2 mt-3">مهارت ها</h2>
+                    <h2 class="title title-section title--h2 mt-3">{% trans 'Skills' %}</h2>
                     <div class="box box--s2 box-inner mb-0">
                         {% for skill in skills %}
                         <div class="progress">

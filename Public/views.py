@@ -1,4 +1,6 @@
-from django.shortcuts import render, reverse, redirect
+from django.shortcuts import render, reverse
+from django.db.models import F
+from django.http import Http404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -39,18 +41,18 @@ def worksamples(request):
     context = {
         'information': get_information_obj(),
         'worksamples': models.WorkSample.objects.all(),
-        'skills': models.Skill.objects.all(),
-        'categories': models.Category.objects.filter(skill__gt=0).distinct(),
+                'categories': models.Category.objects.filter(skill__gt=0).distinct(),
     }
     return render(request, 'Public/work-samples.html', context)
 
-@cache_page(settings.CACHES_TIMEOUT)
 def worksample_detail(request, slug):
+    # not cached on purpose: every visit must be counted
     worksample = models.WorkSample.objects.get_by_slug(slug)
     if not worksample:
-        return redirect('Public:worksamples')
+        raise Http404
+    # atomic update, and avoids clearing the whole cache on every visit
+    models.WorkSample.objects.filter(pk=worksample.pk).update(views=F('views') + 1)
     worksample.views += 1
-    worksample.save()
     context = {
         'information': get_information_obj(),
         'worksample': worksample
@@ -81,7 +83,7 @@ class contact(View):
         except ValidationError:
             email_valid = False
 
-        url_redirect = reverse('Public:contact_me')
+        url_redirect = reverse('public:contact_me')
         if name and email_valid and message:
             models.Contact.objects.create(name=name, email=email, message=message)
             response = HttpResponseRedirect(url_redirect)
@@ -108,7 +110,7 @@ class review(View):
         description = data.get('description') or None
         avatar = data.get('avatar') or None
 
-        url_redirect = reverse('Public:review')
+        url_redirect = reverse('public:review')
         if name and avatar and description:
             models.Review.objects.create(name=name, description=description,image=avatar)
             response = HttpResponseRedirect(url_redirect)
@@ -118,5 +120,8 @@ class review(View):
 
 
 def clear_cache(request):
+    # only the site admin may clear the cache
+    if not (request.user.is_authenticated and request.user.is_staff):
+        raise Http404
     cache.clear()
     return HttpResponse('Cache Cleared Successfully')
