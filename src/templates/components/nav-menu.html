@@ -1,10 +1,11 @@
 {% load i18n FilterTags %}{% get_current_language as LANGUAGE_CODE %}
 <div class="nav-container">
+    {# logical order: the first item is on the start side (right in Persian, left in English) #}
     <ul class="nav">
-        <li class="nav__item"><a class="{% if type_page == 'contact_me' %}active{% endif %}" href="{% url 'public:contact_me' %}">{% trans 'Contact Me' %}</a></li>
-        <li class="nav__item"><a class="{% if type_page == 'worksamples' %}active{% endif %}" href="{% url 'public:worksamples' %}">{% trans 'Projects' %}</a></li>
-        <li class="nav__item"><a class="{% if type_page == 'resume' %}active{% endif %}"  href="{% url 'public:resume' %}">{% trans 'Resume' %}</a></li>
         <li class="nav__item"><a class="{% if type_page == 'home' %}active{% endif %}" href="{% url 'public:home' %}">{% trans 'About Me' %}</a></li>
+        <li class="nav__item"><a class="{% if type_page == 'resume' %}active{% endif %}"  href="{% url 'public:resume' %}">{% trans 'Resume' %}</a></li>
+        <li class="nav__item"><a class="{% if type_page == 'worksamples' %}active{% endif %}" href="{% url 'public:worksamples' %}">{% trans 'Projects' %}</a></li>
+        <li class="nav__item"><a class="{% if type_page == 'contact_me' %}active{% endif %}" href="{% url 'public:contact_me' %}">{% trans 'Contact Me' %}</a></li>
         <li class="nav__item lang-switch">
             {% if LANGUAGE_CODE == 'en' %}
                 <a href="{% lang_url 'fa' %}" hreflang="fa" lang="fa" title="فارسی">فا</a>

@@ -163,7 +163,7 @@ AVATARS_SRC = [
     f"{STATIC_URL}images/avatars/5.png"
 ]
 
-USING_EMAIL_FOR_NOTIFICATION = os.environ.get('USING_EMAIL_FOR_NOTIFICATION') or False
+USING_EMAIL_FOR_NOTIFICATION = os.environ.get('USING_EMAIL_FOR_NOTIFICATION', 'False').lower() in ('1', 'true', 'yes')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True

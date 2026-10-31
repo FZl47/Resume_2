@@ -1452,6 +1452,13 @@ button:focus {
     min-width: 0;
 }
 
+/* RTL: "flex-end" would be the left side, so use "flex-start" to keep the menu on the right */
+@media only screen and (min-width: 992px) {
+    html[dir="rtl"] .nav-container {
+        justify-content: flex-start;
+    }
+}
+
 @media only screen and (max-width: 991px) {
     .nav-container {
         -webkit-backdrop-filter: blur(6px);
@@ -1511,6 +1518,9 @@ button:focus {
     justify-content: center;
     height: 100%;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .nav > * {
@@ -1531,19 +1541,19 @@ button:focus {
 
 .nav__item {
     font-size: 105%;
-    margin-right: 2.75rem;
+    margin-inline-end: 2.75rem;
     /*font-family: 'mj-casablanca';*/
 }
 
 @media only screen and (max-width: 991px) {
     .nav__item {
-        margin-right: 2rem;
+        margin-inline-end: 2rem;
     }
 }
 
 @media only screen and (max-width: 580px) {
     .nav__item {
-        margin-right: 1.25rem;
+        margin-inline-end: 1.25rem;
     }
 }
 
@@ -1574,7 +1584,7 @@ button:focus {
 }
 
 .nav__item:last-child {
-    margin-right: 0;
+    margin-inline-end: 0;
 }
 
 /* -----------------------------------------------------------------
@@ -3651,4 +3661,4 @@ button:focus {
     height: auto!important;
     object-fit: none!important;
     -o-object-fit: none!important;
-}
+}
