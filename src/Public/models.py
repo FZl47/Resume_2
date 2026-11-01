@@ -133,11 +133,14 @@ class WorkSample(mixins_cache.CacheMixin, models.Model):
     link = models.URLField(max_length=300, null=True, blank=True)
     title_en = models.CharField(max_length=100, null=True, blank=True)
     description_en = RichTextField(null=True, blank=True)
+    # display order of the project in the list (lower number first, same number: newest first)
+    order = models.PositiveIntegerField(default=0, db_index=True,
+                                        help_text='Lower number is shown first')
 
     objects = WorkSampleManager()
 
     class Meta:
-        ordering = '-id',
+        ordering = 'order', '-id'
 
     def __str__(self):
         return self.title
@@ -178,6 +181,12 @@ class Image(mixins.RemovePastFileWhenChangedMixin, models.Model):
     FIELDS_REMOVE_FILES = ('image',)
     gallery = models.ForeignKey('Gallery',on_delete=models.CASCADE)
     image = models.ImageField(upload_to=upload_image_gallery_src)
+    # display order of the image in the gallery (lower number first, the first one is the project cover)
+    order = models.PositiveIntegerField(default=0, db_index=True,
+                                        help_text='Lower number is shown first')
+
+    class Meta:
+        ordering = 'order', 'id'
 
     def __str__(self):
         return f"Image - {self.gallery.__str__()}"

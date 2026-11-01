@@ -3121,8 +3121,13 @@ html[dir="ltr"] .sidebar .overhead {
 }
 
 .swiper-slide-project {
-    height: 19.6875rem;
+    /* the box keeps a fixed ratio, so the images are never stretched or cut randomly at any screen size */
+    aspect-ratio: 16 / 9;
+    height: auto;
+    width: 85%;
     max-width: 35rem;
+    border-radius: var(--radius-12);
+    background: var(--color-surface-2);
     opacity: .5;
     overflow: hidden;
     -webkit-transition: opacity .3s ease-in-out;
@@ -3134,14 +3139,18 @@ html[dir="ltr"] .sidebar .overhead {
 }
 
 .swiper-slide-project img {
+    display: block;
     object-fit: cover;
-    height: 200px ;
+    object-position: center;
+    height: 100%;
     width: 100%;
 }
 
-@media only screen and (max-width: 580px) {
+/* from 580px the slider shows 2 slides and sets the slide width itself */
+@media only screen and (min-width: 580px) {
     .swiper-slide-project {
-        height: 9.25rem;
+        width: auto;
+        max-width: none;
     }
 }
 
