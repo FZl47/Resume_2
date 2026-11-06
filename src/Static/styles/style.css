@@ -3648,6 +3648,7 @@ html[dir="ltr"] .sidebar .overhead {
 
 /* Optional organization badge of a project (list card + detail page) */
 .org-badge {
+    font-weight: 700;
     display: inline-block;
     max-width: 100%;
     padding: 0.25rem 0.75rem;
@@ -3719,4 +3720,4 @@ html[dir="ltr"] .sidebar .overhead {
     height: auto!important;
     object-fit: none!important;
     -o-object-fit: none!important;
-}
+}
