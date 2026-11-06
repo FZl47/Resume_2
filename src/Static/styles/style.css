@@ -3650,16 +3650,20 @@ html[dir="ltr"] .sidebar .overhead {
 .org-badge {
     display: inline-block;
     max-width: 100%;
-    margin-top: 0.5rem;
     padding: 0.25rem 0.75rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
-.org-badge--detail {
-    margin: 0 0 1rem;
+/* on a project card: pinned to the top-left corner of the cover (above the hover overlay) */
+.gallery-grid__image-wrap .org-badge {
+    position: absolute;
+    top: 0.625rem;
+    left: 0.625rem;
+    max-width: calc(100% - 1.25rem);
+    z-index: 3;
 }
 
 .skill-tag {

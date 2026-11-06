@@ -54,14 +54,14 @@
                                         <div class="gallery-grid__image-wrap">
                                             <img class="gallery-grid__image cover lazyload"
                                                  src="{{ worksample.get_cover }}" alt="{{ worksample|tr:'title' }}"/>
+                                            {% with organization=worksample|tr:'organization' %}
+                                                {% if organization %}
+                                                    <span class="badge org-badge" title="{{ organization }}">{{ organization }}</span>
+                                                {% endif %}
+                                            {% endwith %}
                                         </div>
                                         <div class="gallery-grid__caption">
                                             <h3 class="title gallery-grid__title">{{ worksample|tr:'title' }}</h3>
-                                            {% with organization=worksample|tr:'organization' %}
-                                                {% if organization %}
-                                                    <span class="badge org-badge">{{ organization }}</span>
-                                                {% endif %}
-                                            {% endwith %}
                                         </div>
                                     </a>
                                 </div>

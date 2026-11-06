@@ -58,6 +58,9 @@ msgstr "لینک"
 msgid "Opinions of some dear ones"
 msgstr "نظر برخی از عزیزان"
 
+msgid "Organization"
+msgstr "سازمان / مجموعه"
+
 msgid "Phone Number"
 msgstr "تلفن همراه"
 

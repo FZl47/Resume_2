@@ -33,11 +33,6 @@
                         <h1 class="title title--h1 text-right d-block w-100">
                             {{ worksample|tr:'title' }}
                         </h1>
-                        {% with organization=worksample|tr:'organization' %}
-                            {% if organization %}
-                                <span class="badge org-badge org-badge--detail">{{ organization }}</span>
-                            {% endif %}
-                        {% endwith %}
                         <div class="header-project__image-wrap">
                             <img class="cover lazyload" src="{{ worksample.get_cover }}"
                                  alt="{{ worksample|tr:'title' }}"/>
@@ -45,6 +40,18 @@
                     </header>
 
                     <ul class="details-info details-info--inline d-block text-center mb-4" dir="ltr">
+                        <!-- Organization (optional) -->
+                        {% with organization=worksample|tr:'organization' %}
+                        {% if organization %}
+                        <li class="details-info__item">
+                            <div class="details-info__info">
+                                <span class="overhead">{% trans 'Organization' %}</span>
+                                <span class="badge org-badge">{{ organization }}</span>
+                            </div>
+                            <span class="box box--s2 icon-box"><i class="fa fa-building-o icon-gold"></i></span>
+                        </li>
+                        {% endif %}
+                        {% endwith %}
                         <!-- Skills -->
                         <li class="details-info__item">
                             <div class="details-info__info">

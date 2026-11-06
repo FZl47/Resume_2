@@ -58,6 +58,9 @@ msgstr ""
 msgid "Opinions of some dear ones"
 msgstr ""
 
+msgid "Organization"
+msgstr ""
+
 msgid "Phone Number"
 msgstr ""
 
