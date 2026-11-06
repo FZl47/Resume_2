@@ -24,7 +24,7 @@ class ImageAdmin(admin.ModelAdmin):
 
 @admin.register(models.WorkSample)
 class WorkSampleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'order', 'date_time_create', 'views')
+    list_display = ('title', 'organization', 'order', 'date_time_create', 'views')
     list_editable = ('order',)
     ordering = ('order', '-id')
 

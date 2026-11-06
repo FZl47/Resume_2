@@ -33,6 +33,11 @@
                         <h1 class="title title--h1 text-right d-block w-100">
                             {{ worksample|tr:'title' }}
                         </h1>
+                        {% with organization=worksample|tr:'organization' %}
+                            {% if organization %}
+                                <span class="badge org-badge org-badge--detail">{{ organization }}</span>
+                            {% endif %}
+                        {% endwith %}
                         <div class="header-project__image-wrap">
                             <img class="cover lazyload" src="{{ worksample.get_cover }}"
                                  alt="{{ worksample|tr:'title' }}"/>

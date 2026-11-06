@@ -915,7 +915,8 @@ button:focus {
     .sidebar .avatar-box {
         -ms-flex-negative: 0;
         flex-shrink: 0;
-        margin: 0 1.5rem 0 0;
+        margin: 0;
+        margin-inline-end: 1.5rem;
         height: 10rem;
         width: 10rem;
     }
@@ -924,7 +925,8 @@ button:focus {
 @media only screen and (max-width: 580px) {
     .sidebar .avatar-box {
         border-radius: var(--radius-20);
-        margin: 0 1rem 0 0;
+        margin: 0;
+        margin-inline-end: 1rem;
         height: 6.5rem;
         width: 6.5rem;
     }
@@ -3642,6 +3644,22 @@ html[dir="ltr"] .sidebar .overhead {
     100% {
         box-shadow: inset 0px 0px 0px 30px #7ac142;
     }
+}
+
+/* Optional organization badge of a project (list card + detail page) */
+.org-badge {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.org-badge--detail {
+    margin: 0 0 1rem;
 }
 
 .skill-tag {

@@ -133,6 +133,9 @@ class WorkSample(mixins_cache.CacheMixin, models.Model):
     link = models.URLField(max_length=300, null=True, blank=True)
     title_en = models.CharField(max_length=100, null=True, blank=True)
     description_en = RichTextField(null=True, blank=True)
+    # optional name of the organization the project was done for (shown as a badge)
+    organization = models.CharField(max_length=100, blank=True, default='')
+    organization_en = models.CharField(max_length=100, blank=True, default='')
     # display order of the project in the list (lower number first, same number: newest first)
     order = models.PositiveIntegerField(default=0, db_index=True,
                                         help_text='Lower number is shown first')
